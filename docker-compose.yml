@@ -8,7 +8,7 @@ services:
      - ./nginx.conf:/etc/nginx/nginx.conf
      - ~/.secret:/etc/certs
     ports:
-     - "80:80"
+     - "443:443"
   graphql-api:
     image: rlkamradt/graphql-api:latest
     ports:
