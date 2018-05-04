@@ -11,6 +11,6 @@ services:
      - "443:443"
   api:
     image: rlkamradt/express:latest
-    env: ~/.secret/secrets.env
+    env_file: ~/.secret/secrets.env
     ports:
      - "3000:3000"
