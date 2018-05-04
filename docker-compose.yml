@@ -3,13 +3,14 @@ services:
   web:
     image: nginx
     links:
-     - graphql-api
+     - api
     volumes:
      - ./nginx.conf:/etc/nginx/nginx.conf
      - ~/.secret:/etc/certs
     ports:
      - "443:443"
-  graphql-api:
-    image: rlkamradt/graphql-api:latest
+  api:
+    image: rlkamradt/express:latest
+    env: ~/.secret/secrets.env
     ports:
      - "3000:3000"
